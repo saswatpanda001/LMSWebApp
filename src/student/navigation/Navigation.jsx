@@ -1,9 +1,15 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../../api'
-
+import { useContext } from 'react'
+import { AuthContext } from '../../context/AuthContext'
+import { useState } from 'react'
 
 const Navigation = () => {
+    const globalAuthData = useContext(AuthContext)
+    const {setIsAuthenticated, setUser} = globalAuthData
+    
+
     const pathname = window.location.pathname
 
     const navigate = useNavigate()
@@ -13,6 +19,8 @@ const Navigation = () => {
         await api.post('/auth/api/logout/');
         sessionStorage.clear();
         window.location.href = '/login';
+        setIsAuthenticated(false);
+        setUser(null);
     } 
     catch (error) {
         console.error("Logout failed:", error);

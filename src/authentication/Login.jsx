@@ -31,7 +31,7 @@ const Login = () => {
             sessionStorage.setItem("role",role);
 
             
-            navigate("/student/dashboard");
+            window.location.href = "/student/dashboard";
             
         } catch (error) {
             setError(error.response?.data?.error || "Login failed");

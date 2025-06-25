@@ -12,7 +12,6 @@ import Grades from './student/grades/Grades'
 import Schedule from './student/schedule/Schedule'
 import StudentProfile from './student/profile/StudentProfile'
 import ProtectedRoute from './ProtectedRoute'
-import { AuthContext } from './context/AuthContext'
 import { AuthProvider } from './context/AuthContext'
 
 const App = () => {
