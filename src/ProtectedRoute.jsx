@@ -5,7 +5,6 @@ import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 
 const ProtectedRoute = ({ allowedRoles }) => {
-  console.log("protected route is enabled")
   const {setUser,setIsAuthenticated,setLoading,loading,isAuthenticated,user} = useContext(AuthContext);
 
 
