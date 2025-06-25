@@ -12,11 +12,15 @@ import Grades from './student/grades/Grades'
 import Schedule from './student/schedule/Schedule'
 import StudentProfile from './student/profile/StudentProfile'
 import ProtectedRoute from './ProtectedRoute'
+import { AuthContext } from './context/AuthContext'
+import { AuthProvider } from './context/AuthContext'
 
 const App = () => {
   return (
     <Router>
+      <AuthProvider>
       <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -31,13 +35,11 @@ const App = () => {
           <Route path="/student/profile" element={<StudentProfile />} />
         </Route>
 
-       
       </Routes>
+      </AuthProvider>
     </Router>
   );
 };
-
-
 
 export default App
 

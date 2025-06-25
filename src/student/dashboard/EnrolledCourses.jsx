@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import api from "../../api";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+
 
 
 const EnrolledCourses = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate  = useNavigate()
+
+  
 
   const getEnrolledCourses = async () => {
     try {

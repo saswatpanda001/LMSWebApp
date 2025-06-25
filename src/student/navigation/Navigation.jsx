@@ -5,7 +5,7 @@ import api from '../../api'
 
 const Navigation = () => {
     const pathname = window.location.pathname
-    console.log(pathname)
+
     const navigate = useNavigate()
 
     const handleLogout = async () => {

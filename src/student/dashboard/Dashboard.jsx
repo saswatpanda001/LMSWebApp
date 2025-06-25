@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Navigation from '../navigation/Navigation';
 import { useRef } from 'react';
 import EnrolledCourses from './EnrolledCourses';
 import Announcements from './Announcements';
 import Deadlines from './Deadlines';
 import Schedule from './Schedule';
+import { AuthContext } from '../../context/AuthContext';
+
 
 const Dashboard = () => {
+    const loggedInData = useContext(AuthContext)
+    console.log(loggedInData)
   const [collapse,setCollapse] = useState(false);
   const sideBarRef = useRef(null);
 

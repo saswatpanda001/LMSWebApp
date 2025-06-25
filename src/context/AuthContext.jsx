@@ -1,4 +1,4 @@
-// context/AuthContext.js
+
 import { createContext, useState, useEffect } from 'react';
 import api from '../api';
 
@@ -8,12 +8,9 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
-
-  // Check auth status on app load
-  useEffect(() => {
-    const checkAuth = async () => {
+  const checkAuth = async () => {
       try {
-        const { data } = await api.get('/auth/verify/'); 
+        const { data } = await api.get('/auth/api/verify/'); 
         setUser(data.user);
         setIsAuthenticated(true);
       } catch (err) {
@@ -22,7 +19,11 @@ export const AuthProvider = ({ children }) => {
         setLoading(false);
       }
     };
-    checkAuth();
+
+
+  // Check auth status on app load
+  useEffect(() => {
+    checkAuth()
   }, []);
 
   return (

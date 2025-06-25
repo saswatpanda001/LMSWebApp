@@ -7,8 +7,7 @@ const ProtectedRoute = ({ allowedRoles }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const verifyAuth = async () => {
+  const verifyAuth = async () => {
       try {
         const response = await api.get('/auth/api/verify/');
         setUser(response.data.user);
@@ -25,6 +24,8 @@ const ProtectedRoute = ({ allowedRoles }) => {
       }
     };
 
+
+  useEffect(() => {
     verifyAuth();
   }, [allowedRoles]);
 
