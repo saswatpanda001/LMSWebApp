@@ -5,6 +5,7 @@ import { useContext } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import { useState } from 'react'
 
+
 const Navigation = () => {
     const globalAuthData = useContext(AuthContext)
     const {setIsAuthenticated, setUser} = globalAuthData
@@ -45,6 +46,7 @@ const Navigation = () => {
                             <a href="/student/assignment" class="text-primary px-3 py-2 font-medium">Assignments</a>
                             <a href="/student/grades" class="text-primary px-3 py-2 font-medium">Grades</a>
                             <a href="/student/schedule" class="text-primary px-3 py-2 font-medium">Schedule</a>
+                            <a href="/student/attendance" class="text-primary px-3 py-2 font-medium">Attendance</a>
                             <div class="flex items-center ml-4">
                                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="w-8 h-8 rounded-full mr-2"/>
                                 <span class="text-primary px-3 py-2 font-mediums">John Doe</span>
